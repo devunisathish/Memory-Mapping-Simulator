@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>OS Memory Mapping Simulator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1>Operating System Memory Mapping Simulator</h1>
+<p>CPU → MMU → RAM Visualization</p>
+
+<div class="modeButtons">
+<button onclick="setMode('noMMU')">Without MMU (Conflict)</button>
+<button onclick="setMode('MMU')">With MMU Mapping</button>
+</div>
+
+<div class="systemContainer">
+
+<div class="cpu box">
+
+<h2>CPU</h2>
+
+<input id="program" placeholder="Program Name">
+
+<input id="logical" type="number" placeholder="Logical Address">
+
+<input id="data" placeholder="Data">
+
+<button onclick="executeProgram()">Execute</button>
+
+</div>
+
+<div class="arrow">➡</div>
+
+<div class="mmu box">
+
+<h2>MMU</h2>
+
+<div id="translation">Waiting for address...</div>
+
+</div>
+
+<div class="arrow">➡</div>
+
+<div class="ram box">
+
+<h2>RAM</h2>
+
+<div class="ramGrid">
+
+<div class="cell">100</div>
+<div class="cell">200</div>
+<div class="cell">300</div>
+<div class="cell">400</div>
+<div class="cell">500</div>
+<div class="cell">600</div>
+
+</div>
+
+</div>
+
+</div>
+
+<h2>RAM Storage Table</h2>
+
+<table id="ramTable">
+
+<thead>
+
+<tr>
+<th>Physical Address</th>
+<th>Program</th>
+<th>Logical Address</th>
+<th>Data</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr id="row100">
+<td>100</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+
+<tr id="row200">
+<td>200</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+
+<tr id="row300">
+<td>300</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+
+<tr id="row400">
+<td>400</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+
+<tr id="row500">
+<td>500</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+
+<tr id="row600">
+<td>600</td>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+
+</tbody>
+
+</table>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
